@@ -9,12 +9,14 @@ const extractPlugin = new extractTextWebpackPlugin({
 const config = {
     context: path.resolve(appPath),
 
-    entry: './src/js/app.js',
+    entry: {
+        app: './src/app.js',
+    },
 
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(appPath, 'dist'),
-        publicPath: '/dist/'
+        filename: '[name].bundle.js',
+        path: path.resolve(appPath, 'src', 'dist'),
+        publicPath: '/src/dist/'
     },
 
     module: {
@@ -31,8 +33,20 @@ const config = {
             {
                 test: /\.scss$/,
                 use: extractPlugin.extract({
-                    use: [ 'css-loader', 'sass-loader']
+                    use: ['css-loader', 'sass-loader']
                 })
+            }, 
+            {
+                test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+                loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+            },
+            {
+                test: /\.jpe?g$|\.gif$|\.png$/i,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.jpg/,
+                loader: 'file'
             }
         ]
     },
@@ -40,7 +54,7 @@ const config = {
         extractPlugin
     ],
     devServer: {
-        contentBase: path.join(appPath),
+        contentBase: path.join(appPath, 'src'),
         publicPath: "/dist/",
         port: 8080
     }

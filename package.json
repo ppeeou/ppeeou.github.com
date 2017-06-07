@@ -30,5 +30,9 @@
     "style-loader": "^0.18.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "partial-js": "^1.0.0"
   }
 }
