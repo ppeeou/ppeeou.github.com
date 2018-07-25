@@ -25,9 +25,6 @@ const config = {
                 test: /\.js$/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015']
-                    }
                 }
             },
             {
@@ -35,7 +32,7 @@ const config = {
                 use: extractPlugin.extract({
                     use: ['css-loader', 'sass-loader']
                 })
-            }, 
+            },
             {
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
                 loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
