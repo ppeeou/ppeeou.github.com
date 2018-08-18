@@ -5,33 +5,47 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --open --color",
     "build": "webpack -d",
     "build:prod": "webpack -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ppeeou/ppeeou.github.com.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/ppeeou/ppeeou.github.com.git",
+  "author": "hyunwoo.jo <hyunwoo.jo@navercorp.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ppeeou/ppeeou.github.com/issues"
   },
   "homepage": "https://github.com/ppeeou/ppeeou.github.com#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx-compat": "^6.24.1",
     "babel-preset-env": "^1.7.0",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.11",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.0.0-rc.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
-    "webpack": "^3.12.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "file-loader": "^1.1.11",
+    "gestalt": "^0.77.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1"
+  }
 }
