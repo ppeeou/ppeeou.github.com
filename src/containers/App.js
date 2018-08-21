@@ -1,11 +1,7 @@
 
-
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-import {
-  Box,
-} from "gestalt";
+import Loading from '../components/Loading';
+import Button from '../components/Button';
 
 class App extends Component {
   static propTypes = {
@@ -14,9 +10,11 @@ class App extends Component {
 
   render() {
     return (
-      <Box position="absolute">
+      <div position="absolute">
         <div>Hello world</div>
-      </Box>
+        <Loading isText={false} />
+        <Button type="prior">gadsgdsgsdfasd</Button>
+      </div>
     )
   }
 }
